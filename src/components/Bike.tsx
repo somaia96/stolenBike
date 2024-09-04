@@ -27,7 +27,7 @@ export default function Bike({ bike }: IProps) {
         className="m-0 w-full md:w-1/4 shrink-0 rounded-r-none bg-cover bg-center bg-gray-100"
       >
         <img
-          src={bike.large_img ? bike.large_img : "src/assets/images/bike.svg"}
+          src={bike.large_img ? bike.large_img : "/src/assets/images/bike.svg"}
           alt="card-image"
           className="h-full w-full object-cover bg-transparent"
         />

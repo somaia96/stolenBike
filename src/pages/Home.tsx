@@ -10,15 +10,12 @@ const Home = () => {
   const [range, setRange] = useState("")
 
   useEffect(() => {
-    fetch(`https://bikeindex.org/api/v3/search?page=${page}&per_page=10`)
-      .then(data => data.json())
-      .then(data => setData(data.bikes))
-  }, [page])
-  useEffect(() => {
     fetch(`https://bikeindex.org/api/v3/search?query=${title}&page=${page}&per_page=10`)
       .then(data => data.json())
       .then(data => setData(data.bikes))
-  }, [title])
+      .catch(error => console.error('Error fetching data:', error));
+  }, [title,page])
+
   return <main className="container px-2 my-6">
     {
       data.length ?
