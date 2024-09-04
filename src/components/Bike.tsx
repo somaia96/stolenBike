@@ -4,6 +4,7 @@ import {
   CardBody,
   Typography,
 } from "@material-tailwind/react";
+import { txtSlicer } from "../utils/functions";
 
 interface IProps {
   bike: {
@@ -19,11 +20,11 @@ export default function Bike({ bike }: IProps) {
 
   let timestamp = new Date(bike.date_stolen!);
   return (
-    <Card className="overflow-hidden w-full max-w-[48rem] my-3 sm:max-w-[100%] h-56 flex-row">
+    <Card className="overflow-hidden w-full max-w-[48rem] my-3 md:max-w-[100%] md:h-56 flex-col md:flex-row">
       <CardHeader
         shadow={false}
         floated={false}
-        className="m-0 w-1/4 shrink-0 rounded-r-none bg-cover bg-center bg-gray-100"
+        className="m-0 w-full md:w-1/4 shrink-0 rounded-r-none bg-cover bg-center bg-gray-100"
       >
         <img
           src={bike.large_img ? bike.large_img : "src/assets/images/bike.svg"}
@@ -31,17 +32,17 @@ export default function Bike({ bike }: IProps) {
           className="h-full w-full object-cover bg-transparent"
         />
       </CardHeader>
-      <CardBody className="w-1/2">
+      <CardBody className="w-full md:w-1/2 pb-0 md:p-6">
         <Typography variant="h4" color="blue-gray" className="mb-2">
-          {bike.title}
+          {txtSlicer(bike.title,30)}
         </Typography>
 
-        <Typography color="gray" className="mb-3 font-normal">
-          {bike.description ? bike.description : "No Description"}
+        <Typography color="gray" className="md:mb-3 font-normal">
+          {bike.description ? txtSlicer(bike.description) : "No Description"}
         </Typography>
        
       </CardBody>
-      <CardBody>
+      <CardBody className="w-auto" >
         <Typography variant="h6" color="gray" className="mb-1 uppercase">
           Date Stolen : <br />
         </Typography>

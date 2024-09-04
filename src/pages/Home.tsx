@@ -3,7 +3,8 @@ import Bike from "../components/Bike"
 import Pagination from "../components/Pagination"
 import NoBike from "../components/NoBike"
 
-const Home = () => {const [data, setData] = useState<Bike[]>([])
+const Home = () => {
+  const [data, setData] = useState<Bike[]>([])
   const [page, setPage] = useState(1)
   const [title, setTitle] = useState("")
   const [range, setRange] = useState("")
@@ -22,7 +23,7 @@ const Home = () => {const [data, setData] = useState<Bike[]>([])
     {
       data.length ?
         <> <div className="w-full flex gap-2 items-center justify-between max-h-24 h-20">
-          <div className="w-11/12 flex flex-col justify-between">
+          <div className="w-full sm:w-11/12 flex flex-col justify-between">
             <input className="w-full h-10 outline-none border rounded-sm px-3 border-1 mb-2 border-gray-200"
               type="text"
               placeholder="Search Bike Title"
@@ -39,12 +40,12 @@ const Home = () => {const [data, setData] = useState<Bike[]>([])
               onChange={e => setRange(e.target.value)}
             />
           </div>
-          <div className="flex justify-center text-sm items-center w-32 p-11 bg-blue-gray-50 rounded-sm h-full">
+          <div className="hidden sm:flex justify-center text-sm items-center w-32 p-11 bg-blue-gray-50 rounded-sm h-full">
             <i className="w-full fa-solid p-3 fa-search h-10"></i>
           </div>
         </div>
           {data!.map((bike, i) => (
-              <Bike key={i} bike={bike} />
+            <Bike key={i} bike={bike} />
           ))}
         </> : <NoBike />
     }
