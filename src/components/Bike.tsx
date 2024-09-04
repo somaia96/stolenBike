@@ -25,7 +25,7 @@ export default function Bike({ bike }: IProps) {
       <CardHeader
         shadow={false}
         floated={false}
-        className="m-0 w-full md:w-1/4 shrink-0 rounded-r-none bg-cover bg-center bg-gray-100"
+        className="m-0 w-full md:w-1/4 shrink-0 rounded-r-none bg-cover bg-center bg-gray-100 flex justify-center items-center"
       >
        {bike.large_img? <img
           src={bike.large_img}
