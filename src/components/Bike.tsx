@@ -5,6 +5,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { txtSlicer } from "../utils/functions";
+import BikeSvg from "../assets/SVG/BikeSvg";
 
 interface IProps {
   bike: {
@@ -26,11 +27,11 @@ export default function Bike({ bike }: IProps) {
         floated={false}
         className="m-0 w-full md:w-1/4 shrink-0 rounded-r-none bg-cover bg-center bg-gray-100"
       >
-        <img
-          src={bike.large_img ? bike.large_img : "/src/assets/images/bike.svg"}
+       {bike.large_img? <img
+          src={bike.large_img}
           alt="card-image"
           className="h-full w-full object-cover bg-transparent"
-        />
+        />:<BikeSvg/>}
       </CardHeader>
       <CardBody className="w-full md:w-1/2 pb-0 md:p-6">
         <Typography variant="h4" color="blue-gray" className="mb-2">
