@@ -2,3 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+/****************** Page Not Found 404 *******************/
+#handboy
+{
+   animation: swing ease-in-out 1.3s infinite alternate;
+    transform-origin: 98% 98%;
+    transform-box: fill-box;
+}
+#girllight
+{
+   animation: swing ease-in-out 1.3s infinite alternate;
+    transform-origin: 0% 97%;
+    transform-box: fill-box;
+}
+#hairgirl
+{
+    animation: swinghair ease-in-out 1.3s infinite alternate;
+   transform-origin: 60% 0%;
+    transform-box: fill-box;
+}
+#zero
+{
+  transform-origin:bottom;
+  transform-box:fill-box;
+}
+/*************swing************/
+@keyframes swing {
+    0% { transform: rotate(10deg); }
+    100% { transform: rotate(-10deg); }
+}
+/*************swing hair************/
+@keyframes swinghair {
+    0% { transform: rotate(6deg); }
+    100% { transform: rotate(-6deg); }
+}
+/**************** Page Not Found 404 *********************/
+
+
+/* loading spinner rotate */
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .loading {
+    animation: loading linear 2s infinite;
+  
+  }
+  /* loading spinner rotate */
+  
