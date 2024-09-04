@@ -35,7 +35,7 @@ export default function Pagination({setPage}:IProps) {
     <div className="flex items-center gap-4 justify-center mt-6">
       <Button
         variant="text"
-        className="flex items-center gap-2 rounded-full"
+        className="hidden md:flex items-center gap-2 rounded-full"
         onClick={prev}
         disabled={active === 1}
       >
@@ -50,7 +50,7 @@ export default function Pagination({setPage}:IProps) {
       </div>
       <Button
         variant="text"
-        className="flex items-center gap-2 rounded-full"
+        className="hidden md:flex items-center gap-2 rounded-full"
         onClick={next}
         disabled={active === 5}
       >
