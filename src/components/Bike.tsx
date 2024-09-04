@@ -17,6 +17,7 @@ interface IProps {
 
 export default function Bike({ bike }: IProps) {
 
+  let timestamp = new Date(bike.date_stolen!);
   return (
     <Card className="overflow-hidden w-full max-w-[48rem] my-3 sm:max-w-[100%] h-56 flex-row">
       <CardHeader
@@ -44,11 +45,17 @@ export default function Bike({ bike }: IProps) {
         <Typography variant="h6" color="gray" className="mb-1 uppercase">
           Date Stolen : <br />
         </Typography>
-    
+        <p>
+          {timestamp.toUTCString() ? timestamp.toUTCString() : "No Date"}
+        </p>
+       
         <Typography variant="h6" color="gray" className="mt-3 mb-1 uppercase">
           Location :
         </Typography>
-    
+        <p>
+          {bike.stolen_location ? bike.stolen_location : "No Location"}
+        </p>
+
       </CardBody>
     </Card>
   );
