@@ -20,7 +20,7 @@ export default function Pagination({setPage}:IProps) {
     } as any);
  
   const next = () => {
-    if (active === 5) return;
+    if (active === 500) return;
  
     setActive(active + 1);
   };
@@ -52,7 +52,7 @@ export default function Pagination({setPage}:IProps) {
         variant="text"
         className="hidden md:flex items-center gap-2 rounded-full"
         onClick={next}
-        disabled={active === 5}
+        disabled={active === 500}
       >
         Next
         <ArrowRightIcon strokeWidth={2} className="h-4 w-4" />
